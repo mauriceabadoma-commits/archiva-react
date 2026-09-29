@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Surcouche Archiva par-dessus Bootstrap.
+   On ne redéfinit JAMAIS les classes de Bootstrap (.btn, .card, .navbar...) :
+   on personnalise seulement ses variables CSS, pour garder un seul système
+   de style cohérent (principe DRY appliqué à l'intégration de Bootstrap).
+   ========================================================================== */
+
+:root {
+  --bs-primary: #ff9800;
+  --bs-primary-rgb: 255, 152, 0;
+  --bs-link-color: #ff9800;
+  --bs-link-hover-color: #e08600;
+  --bs-body-font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+.btn-primary {
+  --bs-btn-bg: #ff9800;
+  --bs-btn-border-color: #ff9800;
+  --bs-btn-hover-bg: #e08600;
+  --bs-btn-hover-border-color: #e08600;
+  --bs-btn-active-bg: #e08600;
+  --bs-btn-active-border-color: #e08600;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+/* Image de carte : même cadrage que l'ancienne version (4:3, recadrée proprement) */
+.cer-card-img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Description tronquée en CSS, jamais dans les données (même logique qu'avant) */
+.text-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+/* Bouton favori : pas de bordure ni de fond, juste le cœur */
+.fav-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.fav-btn:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Dégradé pour les pages de connexion / inscription */
+.auth-gradient {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0a56b 0%, #f5c07c 38%, #fae6c6 70%, #fdf6ea 100%);
+}
